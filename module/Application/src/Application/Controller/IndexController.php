@@ -22,11 +22,11 @@ class IndexController extends AbstractActionController
     public function localstoragetestAction()
     {
 
-				$handle = fopen('gs://tmpfiles/today.txt','w');
-				fwrite($handle, date('l'));
-				fclose($handle);
+		$handle = fopen('gs://tmpfiles/today.txt','w');
+		fwrite($handle, date('l'));
+		fclose($handle);
 
-				$today = file_get_contents('gs://tmpfiles/today.txt');
+		$today = file_get_contents('gs://tmpfiles/today.txt');
 
         return new ViewModel(array(
         		'today' => $today
